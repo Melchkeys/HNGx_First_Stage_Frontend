@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <style>
+       section {
+        max-width: 100%;
+        padding: 0 60px;
+        margin: 5%;
+        margin-left: 25%;
+      }
+      
+      img{
+        width: 50%;
+      }
+      .form-content{
+        font-weight: bold;
+      }
+      .link-content{
+        font-weight: bold;
+      }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNGx Frontend</title>
+</head>
+<body>
+        <section>
+            <div class="img-content">
+                <img src="melchkeys.jpg" alt="Melchkeys" data-testid="slackDisplayImage">
+            </div>
+
+
+            <div class="form-content">
+                <p data-testid="slackUserName">Slack Name: Melchizedek Kabiyesi</p>
+                <p  data-testid="currentDayOfTheWeek" id="currentDayOfTheWeek"></p>
+                <p  data-testid="currentUTCTime" id="currentUTCTime"> </p>
+                <p data-testid="myTrack">Track: Frontend</p>
+            </div>
+
+
+            <div class="link-content">
+                <a target="_blank" href="https://github.com/Melchkeys/HNGx_First_Stage_Frontend.git" ><p data-testid="githubURL">Github URL</p></a>
+            </div>
+    
+        </section>
+
+        <script>
+            function getCurrentDay() {
+              const currentDate = new Date();
+              const options = { weekday: "long" };
+              const currentDay = currentDate.toLocaleDateString("en-US", options);
+              return currentDay;
+            }
+    
+            function getCurrentUTCTime() {
+              const currentDate = new Date();
+              const currentUTCTime = currentDate.toISOString();
+              return currentUTCTime;
+            }
+    
+            document.getElementById("currentDayOfTheWeek").textContent =
+              getCurrentDay();
+            document.getElementById("currentUTCTime").textContent =
+              getCurrentUTCTime();
+          </script>
+</body>
+</html>
